@@ -1,15 +1,19 @@
-import os 
+import os
+from os import *
 from sys import platform 
 
-cwd = os.getcwd()+"/"
-list = os.listdir (cwd)
+path = os.getcwd()+"/"
+list = os.listdir (path)
+
 def BulkChange ():
-    for number , filename in enumerate(os.listdir(cwd)):
+    for number , filename in enumerate(os.listdir(path)):
         if filename == "BulkChanger.py":
             continue 
-        source = cwd + filename 
+        elif os.path.isdir(path):
+            continue
+        source = path + filename 
         destionation = str(number) + "-" + filename
-        destionation = cwd + destionation 
+        destionation = path + destionation 
         os.rename (source , destionation)
 
 BulkChange ()
