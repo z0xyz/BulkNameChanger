@@ -1,5 +1,4 @@
 import  os
-from os import *
 from sys import platform 
 
 path = os.getcwd()+"/"
